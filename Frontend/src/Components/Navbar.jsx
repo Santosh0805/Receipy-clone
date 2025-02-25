@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <img src="./recepi.PNG" alt="logo" />
+        <h1>FOOD RECIPE</h1>
         <ul>
           <Link to="/">Home</Link>
           {!isAuth ? (
