@@ -1,16 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-// import { ContextProvider } from "../Context/ContextAPI";
 import axios from "axios";
-import { SERVER } from "../App";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
-  const { token } = useContext(ContextProvider);
   const [data, setData] = useState(null);
 
   const fetchProfile = async () => {
     try {
-      const res = await axios.get(`${SERVER}/profile`, {
+      const res = await axios.get(`${fetchdata}/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -30,7 +27,7 @@ const Profile = () => {
     <div>
       <div>
         <img
-          src={data?.user?.image || "https://tinyurl.com/9edxm3tb"}
+          src={data?.user?.image || "https://media.istockphoto.com/id/1682296067/photo/happy-studio-portrait-or-professional-man-real-estate-agent-or-asian-businessman-smile-for.jpg?s=612x612&w=0&k=20&c=9zbG2-9fl741fbTWw5fNgcEEe4ll-JegrGlQQ6m54rg="}
           alt="Profile"
         />
         <h2>{data?.user?.name}</h2>

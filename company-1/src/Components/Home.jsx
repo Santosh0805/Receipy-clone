@@ -1,39 +1,36 @@
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
+// import jwt from "jsonwebtoken";
 import RecipeCard from "../Pages/RecipeCard";
 import "./Home.css";
 
-import data from "../../db.json";
-
-const recipes = data.results;
-console.log(recipes)
-
+// 2f32557e862049a99ca0f4d0336dfbfa
 function Home() {
-  // const [recipes, setRecipes] = useState([]);
-  // const API_KEY = "75f324955bb24dd3b33beb91fe193cd5";
-  // const [query, setQuery] = useState("");
-  // const [limit, setLimit] = useState(100);
+  const [recipes, setRecipes] = useState([]);
+  const API_KEY = "2f32557e862049a99ca0f4d0336dfbfa";
+  const [query, setQuery] = useState("");
+  const [limit, setLimit] = useState(100);
 
-  // useEffect(() => {
-  //   const fetchRecipes = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&addRecipeInformation=true&number=${limit}&offset=0`
-  //       );
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&addRecipeInformation=true&number=${limit}&offset=0`
+        );
 
-  //       if (response.data && response.data.results) {
-  //         setRecipes(response.data.results);
-  //       } else {
-  //         setRecipes([]); 
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //       setRecipes([]);
-  //     }
-  //   };
+        if (response.data && response.data.results) {
+          setRecipes(response.data.results);
+        } else {
+          setRecipes([]); 
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setRecipes([]);
+      }
+    };
 
-  //   fetchRecipes();
-  // }, [query, limit]);
+    fetchRecipes();
+  }, [query, limit]);
 
   return (
     <div>
