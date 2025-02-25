@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import jwt from "jsonwebtoken";
 import RecipeCard from "../Pages/RecipeCard";
 import "./Home.css";
 
