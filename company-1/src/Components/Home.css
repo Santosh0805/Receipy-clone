@@ -1,0 +1,133 @@
+.home-container {
+    min-height: 100vh;
+    background-color: #f9fafb;
+  }
+  
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('/images/hero-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hero p {
+  color: #ddd;
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+  .hero h1 {
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: #1f2937;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #e11d48;
+    border-radius: 2px;
+  }
+  
+  .recipes-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .loading-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6b7280;
+    grid-column: 1 / -1;
+    padding: 3rem;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      height: 50vh;
+      min-height: 300px;
+    }
+  
+    .recipes-section {
+      padding: 1rem;
+    }
+  
+    .recipes-grid {
+      gap: 1.5rem;
+      padding: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      height: 40vh;
+      min-height: 250px;
+    }
+  
+    .section-title {
+      margin-bottom: 2rem;
+    }
+  
+    .recipes-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
