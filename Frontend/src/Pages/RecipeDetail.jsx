@@ -7,7 +7,7 @@ function RecipeDetail() {
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=2f32557e862049a99ca0f4d0336dfbfa`)
+    axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=b62222adb6df497bbfdfb33ee7310462`)
       .then(response => setRecipe(response.data))
       .catch(error => console.error('Error fetching data:', error));
   }, [id]);

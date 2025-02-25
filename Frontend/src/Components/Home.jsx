@@ -3,10 +3,10 @@ import axios from "axios";
 import RecipeCard from "../Pages/RecipeCard";
 import "./Home.css";
 
-// 2f32557e862049a99ca0f4d0336dfbfa
+// b62222adb6df497bbfdfb33ee7310462
 function Home() {
   const [recipes, setRecipes] = useState([]);
-  const API_KEY = "2f32557e862049a99ca0f4d0336dfbfa";
+  const API_KEY = "b62222adb6df497bbfdfb33ee7310462";
   const [query, setQuery] = useState("");
   const [limit, setLimit] = useState(100);
 
