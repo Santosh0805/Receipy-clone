@@ -6,7 +6,6 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Components/Home";
 import Profile from "./Pages/Profile";
-// import jwt from "./"
 
 function App() {
   return (
