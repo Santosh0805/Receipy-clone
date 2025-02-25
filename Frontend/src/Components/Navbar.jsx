@@ -13,8 +13,8 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           {!isAuth ? (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/register">Signup</Link>
+              <Link to="/register">Create Account</Link>
+              <Link to="/login">Login Account</Link>
             </>
           ) : (
             <>
