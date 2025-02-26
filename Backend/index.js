@@ -18,9 +18,9 @@ app.listen(5000, () => {
 
 app.get("/api/recipes", async (req, res) => {
   try {
-    const SPOONACULAR_API_KEY = "092e26df7455448eb75c97c2cafea446";
+    const API_KEY = "b134c3f6c0074957a135975cd91d8092";
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?${SPOONACULAR_API_KEY}`,
+      `https://api.spoonacular.com/recipes/complexSearch?${API_KEY}`,
       {
         params: {
           number: 10,

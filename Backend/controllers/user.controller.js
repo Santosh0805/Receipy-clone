@@ -13,11 +13,11 @@ const register = async (req, res) => {
     res.status(500).json({ message: err.message || "Something went wrong" });
   }
 };
+
 const login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email, password });
-
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET_KEY);
 
     if (user) {
@@ -29,10 +29,11 @@ const login = async (req, res) => {
           user: { _id: user._id, email: user.email, name: user.name },
         });
     } else {
-      res.status(500).json({ message: "Password is not Match" });
+      res.status(401).json({ message: "invalid credientials" });
     }
   } catch (error) {
-    res.status(401).json({ message: "invalid credientials" });
+    res.status(500).json({ message: "Password is not Match" });
+    
   }
 };
 
