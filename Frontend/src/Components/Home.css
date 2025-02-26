@@ -62,3 +62,27 @@
 .add-to-cart:hover {
   background-color: #e65a50;
 }
+
+.recipes-section {
+  padding: 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* .loading-text {
+  font-size: 1.2rem;
+  color: #b62222;
+} */
