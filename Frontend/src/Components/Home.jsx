@@ -3,10 +3,9 @@ import axios from "axios";
 import RecipeCard from "../Pages/RecipeCard";
 import "./Home.css";
 
-// b62222adb6df497bbfdfb33ee7310462
+// const API_KEY = "092e26df7455448eb75c97c2cafea446","b62222adb6df497bbfdfb33ee7310462";
 function Home() {
   const [recipes, setRecipes] = useState([]);
-  // const API_KEY = "092e26df7455448eb75c97c2cafea446";
   const [query, setQuery] = useState("");
   const [limit, setLimit] = useState(100);
 
@@ -28,7 +27,6 @@ function Home() {
         setRecipes([]);
       }
     };
-
     fetchRecipes();
   }, [query, limit]);
 
@@ -42,7 +40,7 @@ function Home() {
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))
           ) : (
-            <p className="loading-text">Loading recipes...</p>
+          <p className="loading-text">Loading recipes...</p>
           )}
         </div>
       </section>

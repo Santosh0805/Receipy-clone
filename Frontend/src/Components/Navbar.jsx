@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav className="navbar">
         <h1>FOOD RECIPE</h1>
         <ul>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
           {!isAuth ? (
             <>
               <Link to="/register">Create Account</Link>
