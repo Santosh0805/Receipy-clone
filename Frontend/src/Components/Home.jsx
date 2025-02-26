@@ -6,7 +6,7 @@ import "./Home.css";
 // b62222adb6df497bbfdfb33ee7310462
 function Home() {
   const [recipes, setRecipes] = useState([]);
-  const API_KEY = "092e26df7455448eb75c97c2cafea446";
+  // const API_KEY = "092e26df7455448eb75c97c2cafea446";
   const [query, setQuery] = useState("");
   const [limit, setLimit] = useState(100);
 
@@ -14,9 +14,10 @@ function Home() {
     const fetchRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&addRecipeInformation=true&number=${limit}&offset=0`
-        );
-
+          `http://localhost:5000/api/recipes`
+        )
+        console.log(response);
+        
         if (response.data && response.data.results) {
           setRecipes(response.data.results);
         } else {

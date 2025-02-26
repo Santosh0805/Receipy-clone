@@ -4,6 +4,8 @@ const connectDB = require("./config/db");
 const express = require("express");
 const cors = require("cors");
 const userRoutes = require("./routes/user.routes");
+const axios = require("axios");
+
 
 const app = express();
 
@@ -17,13 +19,14 @@ app.listen(5000, () => {
 });
 
 app.get("/api/recipes", async (req, res) => {
+  const {query} = req.query;
   try {
     const API_KEY = "b134c3f6c0074957a135975cd91d8092";
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?${API_KEY}`,
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`,
       {
         params: {
-          number: 10,
+          number: 25,
           offset: 0,
           query: query,
           addRecipeInformation:true
